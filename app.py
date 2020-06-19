@@ -129,7 +129,7 @@ if run:
     pred_input_low = rf_low.predict(X_input)
     pred_input_high = rf_high.predict(X_input)
     st.header("Your estimated maximum salary is USD {}".format(int(pred_input_high)))
-    st.subheader("Your range of prediction is USD {} - USD {}".format(int(pred_input_low,pred_input_high)))
+    st.subheader("Your range of prediction is USD {} - USD {}".format(int(pred_input_low), int(pred_input_high)))
 else:
     st.write("Waiting calculation!")
 
