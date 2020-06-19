@@ -11,9 +11,6 @@ import pandas as pd
 #load the data
 data = pd.read_csv("glassdoor_jobs.csv")
 
-
-
-
 # recode salary and location
 data[['Low','High_A']] = data['Salary Estimate'].str.split('-', expand=True)
 data[['High','Drop']] = data['High_A'].str.split('(', expand=True)
@@ -29,7 +26,7 @@ data['City'] = data['Location'].str.strip().str[:-4]
 
 data.head(10)
 
-# removal null in salary
+# save the cleaned data
 
 clean_data = data[['Job Title','Job Description', 'Low', 'High', 'City', 'State']]
 clean_data.to_csv('Cleaned_Data.csv')
