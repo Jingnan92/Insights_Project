@@ -8,8 +8,8 @@ Created on Fri Jun 12 16:20:02 2020
 import pandas as pd
 from UtilWordEmbedding import DocPreprocess
 from gensim.models import word2vec
-#import spacy
-import spacy_streamlit
+import spacy
+from textblob import TextBlob 
 from UtilWordEmbedding import TfidfEmbeddingVectorizer
 from scipy.sparse import hstack
 from sklearn.feature_extraction import DictVectorizer
@@ -59,7 +59,8 @@ data = pd.read_csv("Cleaned_Data.csv")
 # Preprocess the data
 #---------------------------------
 #nlp = spacy.load('en_core_web_md')
-nlp = ["en_core_web_sm", "/path/to/model"]
+nlp = spacy.load('en')
+
 stop_words = spacy.lang.en.stop_words.STOP_WORDS
 all_docs = DocPreprocess(nlp, stop_words, data['Job Description'], data['Job Title'])
 
