@@ -9,7 +9,6 @@ import pandas as pd
 from UtilWordEmbedding import DocPreprocess
 from gensim.models import word2vec
 import spacy
-from textblob import TextBlob 
 from UtilWordEmbedding import TfidfEmbeddingVectorizer
 from scipy.sparse import hstack
 from sklearn.feature_extraction import DictVectorizer
